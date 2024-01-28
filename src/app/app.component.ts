@@ -21,13 +21,22 @@ export class AppComponent {
     new TodoItem("Finish unit testing course"),
   ];
   newTodoContent:string="";
-  currentFilter:string="ALL"
-  filters:string[]=["ALL","CHECKED","UNCHECKED"];
+  filters:string[]=["All","Checked","Un Checked"];
+  currentFilter:string=this.filters[0];
   
   // Icons
   faCheck=faCheck;
   faRotateLeft = faRotateLeft
   
+  get filteredItems(): TodoItem[] {
+    if(this.currentFilter=="All"){
+      return this.items;
+    } else if (this.currentFilter=="Checked") {
+      return this.items.filter(i=>i.checked);
+    } else {
+      return this.items.filter(i=>!i.checked);
+    }
+  }
   
   addNewItem() {
     this.items.push(new TodoItem(this.newTodoContent));
@@ -41,17 +50,6 @@ export class AppComponent {
   
   setCurrentFilter(filter:string){
     this.currentFilter=filter;
-  }
-  
-  displayItem(item: TodoItem): boolean {
-    if (this.currentFilter === 'ALL') {
-      return true;
-    } else if (this.currentFilter === 'CHECKED') {
-      return item.checked;
-    } else if (this.currentFilter === 'UNCHECKED') {
-      return !item.checked;
-    }
-    return false;
   }
   
 }
