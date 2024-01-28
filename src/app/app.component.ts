@@ -24,10 +24,6 @@ export class AppComponent {
   currentFilter:string="ALL"
   filters:string[]=["ALL","CHECKED","UNCHECKED"];
   
-  // statics 
-  static active = 'bg-blue-600 text-white';
-  static inactive = 'bg-white text-blue-600';
-  
   // Icons
   faCheck=faCheck;
   faRotateLeft = faRotateLeft
