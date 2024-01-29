@@ -3,9 +3,7 @@
   <add-item (addItem)="items.push($event)"></add-item>
   <!-- Filters -->
   <div class="min-w-[600px] my-2 flex justify-center gap-2">
-    <items-filter
-    (filter)="filter=$event"
-    ></items-filter>
+    <items-filter [filters]="filters" (changeFilter)="setCurrentFilter($event)"></items-filter>
   </div>
   
   <!-- Items -->

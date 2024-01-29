@@ -5,13 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { AddItemComponent } from "./add-item/add-item.component";
+import { ItemsFilterComponent } from "./items-filter/items-filter.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [RouterOutlet, FormsModule, CommonModule, ItemsListComponent, AddItemComponent]
+  imports: [RouterOutlet, FormsModule, CommonModule, ItemsListComponent, AddItemComponent, ItemsFilterComponent]
 })
 export class AppComponent {
   title = 'todoList';
@@ -21,18 +22,18 @@ export class AppComponent {
     new TodoItem("Finish unit testing course"),
   ];
   
-  filter = () => {}
+  filters:string[] = ["All","Checked","UnChecked"]
+  currentFilter:string="All"
   
   get filteredItems(): TodoItem[] {
-    // if(this.currentFilter=="All"){
-    //   return this.items;
-    // } else if (this.currentFilter=="Checked") {
-    //   return this.items.filter(i=>i.checked);
-    // } else {
-    //   return this.items.filter(i=>!i.checked);
-    // }
+    if(this.currentFilter=="All"){
+      return this.items;
+    } else if (this.currentFilter=="Checked") {
+      return this.items.filter(i=>i.checked);
+    } else {
+      return this.items.filter(i=>!i.checked);
+    }
     
-    return this.items.filter(filter);
   }
   
   setCurrentFilter(filter:string){
