@@ -1,0 +1,4 @@
+<form class="min-w-[600px] m-5 flex gap-1 h-fit">
+    <input [(ngModel)]="newTodoContent" name="new-todo-content" placeholder="New Todo" class="shadow appearance-none rounded w-full px-3 text-gray-700 leading-tight outline-none focus:ring-2 dark:bg-indigo-950 dark:text-white" type="text">
+    <button (click)="$event.preventDefault;addTodo()"  class="px-4 py-2 bg-gradient-to-r from-indigo-500 to-indigo-600 text-white rounded shadow-sm hover:shadow-md">Add</button>
+</form>
