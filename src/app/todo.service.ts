@@ -8,6 +8,10 @@ import { TodoItem } from '../shared/models/todoItem';
 export class TodoService {
   constructor(private http:HttpClient) { }
   
+  create(todo: TodoItem) {
+    return this.http.post("http://localhost:3000/items",todo);
+  }
+  
   getAll(){
     return this.http.get("http://localhost:3000/items"); 
   }

@@ -9,7 +9,7 @@ import { TodoService } from '../todo.service';
 @Component({
   selector: 'items-list',
   standalone: true,
-  imports: [FontAwesomeModule,HttpClientModule],
+  imports: [FontAwesomeModule],
   templateUrl: './items-list.component.html',
   styleUrl: './items-list.component.css',
   providers:[TodoService]
