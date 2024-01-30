@@ -12,7 +12,7 @@ export class ItemsFilterComponent implements OnInit {
   @Input() filters:string[] = [];
   @Output() changeFilter = new EventEmitter<string>();
   
-  currentFilter = "";
+  currentFilter:string="";
   
   ngOnInit(): void {
     this.currentFilter = this.filters[0];

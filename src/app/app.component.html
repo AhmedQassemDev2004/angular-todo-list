@@ -1,8 +1,8 @@
-<div class="min-h-screen flex flex-col items-center bg-gradient-to-r from-slate-100 to-slate-300 dark:from-indigo-800 dark:to-indigo-950">
+<div class="min-h-screen flex flex-col items-center bg-gradient-to-r from-slate-100 to-slate-300 dark:from-indigo-900 dark:to-indigo-950">
   <!-- Create new todo -->
   <add-item (addItem)="items.push($event)"></add-item>
   <!-- Filters -->
-  <div class="min-w-[600px] my-2 flex justify-center gap-2">
+  <div class="min-w-[600px] my-2">
     <items-filter [filters]="filters" (changeFilter)="setCurrentFilter($event)"></items-filter>
   </div>
   
